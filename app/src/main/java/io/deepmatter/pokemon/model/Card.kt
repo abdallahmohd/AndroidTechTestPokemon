@@ -7,11 +7,11 @@ data class CardWrapper(@SerializedName("cards") val cards: List<Card> = emptyLis
 data class Card(@SerializedName("imageUrl") val image: String = "",
                 @SerializedName("rarity") val rarity: Rarity = Rarity.Common)
 
-sealed class Rarity {
-    object Common : Rarity()
-    object Uncommon : Rarity()
-    object Rare : Rarity()
-    object RareHolo : Rarity()
-    object RareUltra : Rarity()
-    object RareSecret : Rarity()
+enum class Rarity {
+    Common,
+    Uncommon,
+    Rare,
+    RareHolo,
+    RareUltra,
+    RareSecret
 }
